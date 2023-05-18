@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,29 @@
   to {
     transform: rotate(360deg);
   }
+} */
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #1564b2;
+  font-family: 'Prompt', sans-serif;
+  height: fit-content;
+}
+
+header h1 {
+  justify-self: center;
+  color: azure;
+  padding: 0;
+  margin: 0.5rem;
+}
+
+header span {
+  color: #92ffea;
+}
+
+main {
+
 }
