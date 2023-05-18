@@ -1,0 +1,10 @@
+.search-results {
+    grid-column: 2;
+    background-color: #1564b2cc;
+    color:azure;
+    padding: 1rem;
+}
+
+.search-results > h2 {
+    margin: 0 0 1rem 1rem;
+}

@@ -59,5 +59,15 @@ header span {
 }
 
 main {
-
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: grid;
+  grid-template-columns: 10rem repeat(2, 1fr) 10rem;
+  grid-gap: 1.5rem;
 }
+ /* .one {
+  height: 10rem;
+  width: 30rem;
+  background-color: red;
+  grid-column: 2/4;
+  
+ } */

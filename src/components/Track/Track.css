@@ -1,0 +1,30 @@
+.track {
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: solid red; */
+}
+
+.select-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color:#7bd6c5;
+    border: none;
+    color: #011039;
+    font-size: 1.5rem;
+}
+
+.select-btn:hover {
+    background-color:#4f897e;
+
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    padding: 0;
+    background-color: azure;
+}
