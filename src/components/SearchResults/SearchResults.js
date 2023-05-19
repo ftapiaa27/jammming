@@ -9,11 +9,9 @@ function SearchResults({tracks, handleAdd}) {
             <h2>Results</h2>
             {
                 tracks.map(track => 
-                // <li key={track.id}>
                     <Track name={track.name} artist={track.artist} 
                     album={track.album} key={track.id} section='search-res' 
                     handleClick={() => handleAdd(track.id - 1)}/>
-                // </li>
                 )
             }
         </div>

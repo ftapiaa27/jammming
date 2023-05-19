@@ -3,11 +3,7 @@ import './Track.css';
 
 function Track({name, artist, album, section, handleClick}) {
     const operator = section === 'search-res' ? '+' : '-';
-    // function handleClick(idx) {
-    //     console.log('log!');
-    //     console.log(idx);
-    //     // return key;
-    //   }
+    
     return (
         <>
             <div className='track'>

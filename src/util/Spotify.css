@@ -1,0 +1,63 @@
+.log {
+    display: flex;
+    flex-flow: column;
+    color: azure;
+    height: fit-content;
+    width: fit-content;
+    background-color: #000000cc;
+    border: solid #7dd787;
+    padding: 3rem;
+    border-radius: 3rem;
+    align-items: center;
+    grid-column: 1/5;
+    justify-self: center;
+    margin: 3rem;
+}
+
+.log > img {
+    height: 20rem;
+    margin-bottom: 2rem;
+}
+
+.log > a {
+    /* font-size: 2.5rem;
+    color: #7dd787 */
+    background-color: #7dd787;
+    text-decoration: none;
+    color: black;
+    border: 9px solid black;
+    font-size: 2.5rem;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    border-radius: 3rem;
+    cursor: pointer;
+    
+}
+
+.log > a:hover {
+    background-color: #508a56;
+    color: #111;
+}
+
+.log > a:visited {
+    color: black
+}
+
+.logout-btn {
+    grid-column: 2/4;
+    justify-self: center;
+    width: fit-content;
+    background-color: #7dd787;
+    border: 9px solid black;
+    font-size: 2.5rem;
+    padding: 1rem 3rem;
+    font-weight: 700;
+    border-radius: 3rem;
+    cursor: pointer;
+    margin: 3rem;
+}
+
+.logout-btn:hover {
+    background-color: #508a56;
+    color: #111;
+}
