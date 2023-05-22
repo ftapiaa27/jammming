@@ -6,7 +6,7 @@
     /* border: solid red; */
 }
 
-.select-btn {
+.operation-btn {
     width: 2rem;
     height: 2rem;
     border-radius: 1rem;
@@ -17,7 +17,7 @@
     font-size: 1.5rem;
 }
 
-.select-btn:hover {
+.operation-btn:hover {
     background-color:#4f897e;
 
 }

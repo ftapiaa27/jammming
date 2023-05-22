@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import Track from "../Track/Track";
 import './Tracklist.css';
 
-function Tracklist ({tracks, handleRemove}) {
+function Tracklist ({tracks, handleClick, operator}) {
     
     return (
         <div className="track-list">
-            <input className="playlist-name" type="text" placeholder="Playlist Name"></input>
             {
                 tracks.map(track => 
-                    <Track name={track.name} artist={track.artist} 
-                    album={track.album} key={track.id} 
-                    section='playlist' handleClick={() => handleRemove(track.id)}/>
+                    <Track 
+                        name={track.name} 
+                        artist={track.artist} 
+                        album={track.album} 
+                        key={track.id}  
+                        operator={operator}
+                        handleClick={() => handleClick(track)}
+                    />
                 )
             }
-            <button className="save-btn">Save to Spotify</button>
         </div>
     );
 }

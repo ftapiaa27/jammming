@@ -1,4 +1,4 @@
-.track-list {
+/* .track-list {
     grid-column: 3;
     background-color: #1564b2cc;
     color:azure;
@@ -6,29 +6,4 @@
     justify-items: center;
     display: flex;
     flex-flow: column;
-}
-
-.playlist-name {
-    height: 2rem;
-    margin-bottom: 1rem;
-    background: #01103940;
-    border: none;
-    border-bottom: solid 3px #011039;
-    color: azure;
-}
-
-.save-btn {
-    width: 7rem;
-    height: 3rem;
-    border-radius: 2rem;
-    color: white;
-    background-color: #011039;
-    cursor: pointer;
-    border: none;
-    margin-top: 1.5rem;
-    align-self: center;
-}
-
-.save-btn:hover {
-    background-color: #011a5f;
-}
+} */
