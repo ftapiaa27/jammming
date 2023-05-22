@@ -1,17 +1,17 @@
 import React from 'react';
 import './Track.css';
 
-function Track({name, artist, album, section, handleClick}) {
-    const operator = section === 'search-res' ? '+' : '-';
+function Track({name, artist, album, key, handleClick, operator}) {
+    const symbol = operator === 'add' ? '+' : '-';
     
     return (
         <>
-            <div className='track'>
+            <div className='track' key={key}>
                 <div>
-                    <div className='name'>{name} - {artist}</div>
+                    <div className='name'>{name} | {artist}</div>
                     <div className='album'>{album}</div>
                 </div>
-                <button className='select-btn' onClick={handleClick}>{operator}</button>
+                <button className='operation-btn' onClick={handleClick}>{symbol}</button>
             </div>
             <div className='separator'></div>
         </>

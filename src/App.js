@@ -1,41 +1,39 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchResults from './components/SearchResults/SearchResults';
-import Tracklist from './components/Tracklist/Tracklist';
-import Spotify from './util/Spotify';
-
-const tracksArray = [
-  {name:'SearchRes1', artist:'Artist (ft. Other Dude)', album:'The album Vol.II', id:'1'},
-  {name:'SearchRes2', artist:'Artist (ft. Other Dude)', album:'The album Vol.II', id:'2'},
-  {name:'SearchRes3', artist:'Artist (ft. Other Dude)', album:'The album Vol.II', id:'3'},
-  {name:'SearchRes4', artist:'Artist (ft. Other Dude)', album:'The album Vol.II', id:'4'},
-  {name:'SearchRes5', artist:'Artist (ft. Other Dude)', album:'The album Vol.II', id:'5'},
-]
-
+import {Spotify, SpotifyFunctions} from './util/Spotify';
+import Playlist from './components/Playlist/Playlist';
 
 function App() {
-  const [searchRes, setSearchRes] = useState(tracksArray);
+  const [searchRes, setSearchRes] = useState([]);
   const [playlistTracks, setPlaylistTracks] = useState([]);
-  // let loggedIn = false;
-
-  
-  // const [token, setToken] = useState('');
   let token = window.localStorage.getItem('token');
-  // setToken(window.localStorage.getItem('token'));
 
-  function addTrack(index) {
-    let playlistKeys = playlistTracks.map(track=>track.id);
-    if (playlistKeys.find(key => key == (index + 1))) {
+  function addTrack(trackToAdd) {
+    
+    if (playlistTracks.some(track => track.id === trackToAdd.id)) {
       return;
     }
-    setPlaylistTracks([...playlistTracks, searchRes[index]]);
+
+    setPlaylistTracks([trackToAdd, ...playlistTracks]);
   }
 
-  function removeTrack(id) {
-    setPlaylistTracks(playlistTracks.filter(track => track.id !== id));
+  function removeTrack(trackToRemove) {
+    setPlaylistTracks(playlistTracks.filter(track => track.id !== trackToRemove.id));
   }
-  
+
+  const search = useCallback((term) => {
+    SpotifyFunctions.search(term).then(setSearchRes);
+  }, []);
+
+  function savePlaylist(name) {
+    const uris = playlistTracks.map(track => track.id)
+    SpotifyFunctions.savePlaylist(name, uris).then(() => {
+      setPlaylistTracks([]);
+    });
+  }
+
   return (
     <div className="App">
       <header>
@@ -47,9 +45,9 @@ function App() {
             <Spotify />
           </> : 
           <>
-            <SearchBar />
+            <SearchBar handleSearch={search} />
             <SearchResults tracks={searchRes} handleAdd={addTrack}/>
-            <Tracklist tracks={playlistTracks} handleRemove={removeTrack}/>
+            <Playlist tracks={playlistTracks} handleRemove={removeTrack} handleSave={savePlaylist}/>
             <Spotify />
           </>}
         
