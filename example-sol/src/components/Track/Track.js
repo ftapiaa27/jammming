@@ -46,3 +46,4 @@ const Track = (props) => {
 };
 
 export default Track;
+module.exports = Track;
