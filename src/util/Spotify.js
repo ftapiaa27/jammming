@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import './Spotify.css';
 const CLIENT_ID = 'f20d3c2d07fc40fca15f327ebcec272c';
-const REDIRECT_URI = 'http://localhost:3000/';
+// const REDIRECT_URI = 'http://localhost:3000/';
+const REDIRECT_URI = 'https://main--jammmingfta.netlify.app/';
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 
