@@ -1,5 +1,6 @@
-const clientId = ''; // Insert client ID here.
-const redirectUri = 'http://localhost:3000/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+const clientId = 'f20d3c2d07fc40fca15f327ebcec272c'; // Insert client ID here.
+// const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://main--jammmingfta.netlify.app/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 
 const Spotify = {
